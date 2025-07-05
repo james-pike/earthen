@@ -25,6 +25,7 @@ export const useCreateFramework = routeAction$(
       
       return { success: true };
     } catch (error) {
+      console.error('Create framework error:', error);
       return { success: false, error: 'Failed to create framework' };
     }
   }
@@ -45,6 +46,7 @@ export const useUpdateFramework = routeAction$(
       
       return { success: true };
     } catch (error) {
+      console.error('Update framework error:', error);
       return { success: false, error: 'Failed to update framework' };
     }
   }
@@ -65,6 +67,7 @@ export const useDeleteFramework = routeAction$(
       
       return { success: true };
     } catch (error) {
+      console.error('Delete framework error:', error);
       return { success: false, error: 'Failed to delete framework' };
     }
   }
