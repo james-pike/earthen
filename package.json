@@ -28,6 +28,7 @@
     "@builder.io/qwik": "^1.2.15",
     "@builder.io/qwik-city": "latest",
     "@eslint/js": "latest",
+    "@types/minimatch": "^6.0.0",
     "@types/node": "20.14.11",
     "autoprefixer": "^10.4.21",
     "dotenv": "^17.0.1",

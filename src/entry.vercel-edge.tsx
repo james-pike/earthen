@@ -14,8 +14,4 @@ import {
 import qwikCityPlan from "@qwik-city-plan";
 import render from "./entry.ssr";
 
-declare global {
-  interface QwikCityPlatform extends PlatformVercel {}
-}
-
 export default createQwikCity({ render, qwikCityPlan });
