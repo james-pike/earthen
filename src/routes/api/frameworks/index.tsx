@@ -31,7 +31,7 @@ export const useCreateFramework = routeAction$(
   }
 );
 
-// PUT - Update framework
+// PUT - Update frameworks
 export const useUpdateFramework = routeAction$(
   async (data, requestEvent: RequestEventBase) => {
     const db = tursoClient(requestEvent);
