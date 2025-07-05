@@ -21,7 +21,7 @@ export const useCreateFramework = routeAction$(
     }
 
     try {
-      await db.execute("INSERT INTO frameworks (name, description) VALUES (?, ?)", [name, description || '']);
+      await db.execute("INSERT INTO frameworks (name, description) VALUES (?, ?)", [name as string, (description || '') as string]);
       
       return { success: true };
     } catch (error) {
@@ -41,7 +41,7 @@ export const useUpdateFramework = routeAction$(
     }
 
     try {
-      await db.execute("UPDATE frameworks SET name = ?, description = ? WHERE id = ?", [name, description || '', id]);
+      await db.execute("UPDATE frameworks SET name = ?, description = ? WHERE id = ?", [name as string, (description || '') as string, id as number]);
       
       return { success: true };
     } catch (error) {
@@ -61,7 +61,7 @@ export const useDeleteFramework = routeAction$(
     }
 
     try {
-      await db.execute("DELETE FROM frameworks WHERE id = ?", [id]);
+      await db.execute("DELETE FROM frameworks WHERE id = ?", [id as number]);
       
       return { success: true };
     } catch (error) {

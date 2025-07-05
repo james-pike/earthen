@@ -23,9 +23,10 @@ export const useCreateFramework = routeAction$(
     }
 
     try {
-      await db.execute("INSERT INTO frameworks (name, description) VALUES (?, ?)", [name, description || '']);
+      await db.execute("INSERT INTO frameworks (name, description) VALUES (?, ?)", [name as string, (description || '') as string]);
       return { success: true };
     } catch (error) {
+      console.error('Create framework error:', error);
       return { success: false, error: 'Failed to create framework' };
     }
   }
@@ -42,9 +43,10 @@ export const useUpdateFramework = routeAction$(
     }
 
     try {
-      await db.execute("UPDATE frameworks SET name = ?, description = ? WHERE id = ?", [name, description || '', id]);
+      await db.execute("UPDATE frameworks SET name = ?, description = ? WHERE id = ?", [name as string, (description || '') as string, id as number]);
       return { success: true };
     } catch (error) {
+      console.error('Update framework error:', error);
       return { success: false, error: 'Failed to update framework' };
     }
   }
@@ -61,9 +63,10 @@ export const useDeleteFramework = routeAction$(
     }
 
     try {
-      await db.execute("DELETE FROM frameworks WHERE id = ?", [id]);
+      await db.execute("DELETE FROM frameworks WHERE id = ?", [id as number]);
       return { success: true };
     } catch (error) {
+      console.error('Delete framework error:', error);
       return { success: false, error: 'Failed to delete framework' };
     }
   }
